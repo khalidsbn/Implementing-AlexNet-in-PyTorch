@@ -1,7 +1,7 @@
 # Implementing-AlexNet-in-PyTorch
 Implementing AlexNet in PyTorch: A Step-by-Step Guide
 
-'''
+```
 import torch  
 import torch.nn as nn  
 
@@ -45,4 +45,4 @@ class AlexNet(nn.Module):
         x = torch.flatten(x, 1)  
         x = self.classifier(x)  
         return x  
-'''
+```
