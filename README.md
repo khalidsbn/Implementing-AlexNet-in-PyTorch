@@ -1,6 +1,8 @@
-# Implementing-AlexNet-in-PyTorch
-Implementing AlexNet in PyTorch: A Step-by-Step Guide
+<div align="center">
+    <h1> Implementing-AlexNet-in-PyTorch</h1>
+</div>
 
+# Implementation code in PyTorch
 ```
 import torch  
 import torch.nn as nn  
@@ -46,3 +48,18 @@ class AlexNet(nn.Module):
         x = self.classifier(x)  
         return x  
 ```
+
+# Breaking down the code: 
+At its core, AlexNet is composed of eight learned layers:
+* **Five convolutional layers** extract hierarchical features from the input images.
+* **Three fully connected layers that perform the final classification into 1000 ImageNet categories
+
+The network takes an input image of size **224x224x3** (width, height, channels) and processes it through a series of convolutions, pooling, and normalization layers before flattening the features into a vector for classification. 
+
+## Layer-by-layer Breakdown
+### 1. First Convolutional Block
+* **Convolution:** The first layer applies 96 kernels of size 11x11 with a stride of 4.
+      Output size = (224 - 11) / 4 + 1 = 54
+  So, the output is approximately **54x54x96**.
+* **Max Pooling**: A **3x3** max pooling with a stride of 2 reduces the feature maps to about **26x26x96**.
+* **Local Response Normalization (LRN)**: Normalization helps in generalization and was used in the original paper. 
